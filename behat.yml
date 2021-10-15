@@ -1,0 +1,7 @@
+#default:
+#    suites:
+#        purchase_invoice_features:
+#          paths: [ '%paths.base%/features/basket' ]
+#          contexts: [ 'BasketContext' ]
+#
+
