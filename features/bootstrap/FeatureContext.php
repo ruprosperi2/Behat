@@ -1,9 +1,13 @@
 <?php
 
+use App\Basket;
+use App\Shelf;
 use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use PHPUnit\Framework\Assert as Assertions;
+
 
 class FeatureContext implements SnippetAcceptingContext
 {
@@ -37,7 +41,7 @@ class FeatureContext implements SnippetAcceptingContext
      */
     public function iShouldHaveProductInTheBasket($count)
     {
-        PHPUnit_Framework_Assert::assertCount(
+        Assertions::assertCount(
             intval($count),
             $this->basket
         );
@@ -48,7 +52,7 @@ class FeatureContext implements SnippetAcceptingContext
      */
     public function theOverallBasketPriceShouldBePs($price)
     {
-        PHPUnit_Framework_Assert::assertSame(
+        Assertions::assertSame(
             floatval($price),
             $this->basket->getTotalPrice()
         );
